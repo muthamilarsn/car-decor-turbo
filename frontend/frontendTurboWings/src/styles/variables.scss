@@ -1,0 +1,12 @@
+// First, @use Vuetify settings
+@use 'vuetify/settings' with (
+  $light: true
+);
+
+// Then, use Vuetify and add custom styles
+@use 'vuetify' with (
+  $body-font-family: 'Roboto, sans-serif',
+  $heading-font-family: 'Roboto, sans-serif',
+);
+
+// Any other styles can follow
