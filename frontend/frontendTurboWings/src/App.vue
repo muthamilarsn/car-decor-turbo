@@ -3,8 +3,8 @@ import { RouterLink, RouterView } from 'vue-router';
 </script>
 
 <template>
-  <div>
-    <header>
+  <!-- <div> -->
+    <!-- <header>
       <img alt="Car Decor Logo" class="logo" src="@/assets/logo.svg" width="125" height="125" />
 
       <nav>
@@ -13,23 +13,16 @@ import { RouterLink, RouterView } from 'vue-router';
         <RouterLink to="/products">Products</RouterLink>
         <RouterLink to="/categories">Categories</RouterLink>
       </nav>
-    </header>
+    </header> -->
 
-    <main>
+    <!-- <main> -->
       <RouterView />
-    </main>
-  </div>
+    <!-- </main> -->
+  <!-- </div> -->
 </template>
 
 <style scoped>
-header {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 1rem;
-  background-color: #f8f9fa;
-  border-bottom: 1px solid #ddd;
-}
+
 
 .logo {
   width: 100px;

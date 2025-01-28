@@ -1,9 +1,10 @@
 // src/router/index.ts
 import { createRouter, createWebHistory } from 'vue-router';
 import HomeView from '@/views/HomeView.vue';
-import AboutView from '@/views/AboutView.vue';
+//import AboutView from '@/views/AboutView.vue';
 //import ProductsView from '@/views/ProductsView.vue';
 //import CategoriesView from '@/views/CategoriesView.vue';
+import FooterView from '@/views/FooterView.vue';
 
 const routes = [
   {
@@ -12,9 +13,9 @@ const routes = [
     component: HomeView,
   },
   {
-    path: '/about',
-    name: 'About',
-    component: AboutView,
+    path: '/footeer',
+    name: 'Footer',
+    component: FooterView,
   },
   // {
   //   path: '/products',
