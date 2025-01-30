@@ -30,20 +30,22 @@
         <div class="overlay"></div>
         <v-container class="hero-content">
           <!-- Tabs Section -->
-          <v-tabs v-model="selectedTab" class="tabs-section">
-            <v-tab value="featured">Performance</v-tab>
-            <v-tab value="new-arrivals">Exterior</v-tab>
-            <v-tab value="best-sellers">Interior</v-tab>
-            <v-tab value="lighting">Lighting</v-tab>
-            <v-tab value="audio-electronics">Audio & Electronics</v-tab>
-            <v-tab value="wheels-tires">Wheels & Tires</v-tab>
-            <v-tab value="others">Others</v-tab>
+          <v-tabs v-model="selectedTab" class="tabs-section" align-tabs="center">
+            <v-tab
+              v-for="tab in tabs"
+              :key="tab.value"
+              :value="tab.value"
+              class="custom-tab"
+              :class="{ 'active-tab': selectedTab === tab.value }"
+            >
+              {{ tab.label }}
+            </v-tab>
           </v-tabs>
 
-          <v-row>
+          <v-row class="hero-content-row">
             <!-- First Column: Welcome Text -->
             <v-col cols="12" md="6" class="text-column">
-              <h1 class="hero-title">Welcome to Turbo Wings</h1>
+              <h1 class="hero-title">Welcome to <span class="highlight-text">Turbo Wings</span></h1>
               <p class="hero-subtitle">Find the best car decor items here!</p>
             </v-col>
 
@@ -88,11 +90,22 @@ export default defineComponent({
 
     const selectedTab = ref("featured");
 
+    const tabs = [
+      { label: "Performance", value: "performance" },
+      { label: "Exterior", value: "exterior" },
+      { label: "Interior", value: "interior" },
+      { label: "Lighting", value: "lighting" },
+      { label: "Audio & Electronics", value: "audio-electronics" },
+      { label: "Wheels & Tires", value: "wheels-tires" },
+      { label: "Others", value: "others" },
+    ];
+
     return {
       isDarkTheme,
       toggleTheme,
       logoSrc,
       selectedTab,
+      tabs,
     };
   },
 });
@@ -138,6 +151,27 @@ export default defineComponent({
 .tabs-section {
   background: var(--v-background-base);
   padding-top: 8px;
+  border-bottom: 2px solid rgba(255, 165, 0, 0.5);
+}
+
+.custom-tab {
+  text-transform: uppercase;
+  font-weight: bold;
+  color: white;
+  padding: 12px 16px;
+  transition: all 0.3s ease-in-out;
+}
+
+.custom-tab:hover {
+  color: orange;
+}
+
+.active-tab {
+  color: white !important;
+  background: linear-gradient(45deg, orange, #ff8c00);
+  border-radius: 10px;
+  padding: 12px 20px;
+  box-shadow: 0 4px 10px rgba(255, 140, 0, 0.5);
 }
 
 /* Hero Section */
@@ -145,7 +179,6 @@ export default defineComponent({
   position: relative;
   width: 100%;
   height: 500px;
-  /* Adjusted height */
   overflow: hidden;
   margin-top: 10px;
 }
@@ -190,11 +223,18 @@ export default defineComponent({
 .hero-title {
   font-size: 2.5rem;
   font-weight: bold;
+  color: white;
+}
+
+.hero-title .highlight-text {
+  color: orange;
+  font-weight: bold;
 }
 
 .hero-subtitle {
   font-size: 1.2rem;
   opacity: 0.9;
+  color: rgba(255, 255, 255, 0.8);
 }
 
 /* Right Column: Placeholder Table */
@@ -202,6 +242,16 @@ export default defineComponent({
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+/* Spacing between the two columns */
+.hero-content-row {
+  margin-top: 30px;
+}
+
+/* FilterTable adjustments */
+.hero-content-row .v-col {
+  padding: 20px;
 }
 
 .table-placeholder {
