@@ -1,5 +1,5 @@
 <template>
-    <v-card class="mx-auto" color="secondary">
+    <v-card class="mx-auto" color="secondary" rounded="lg">
         <v-card-text>
             <v-text-field 
                 v-model="searchQuery" 
