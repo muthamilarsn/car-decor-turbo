@@ -6,13 +6,13 @@
         <v-container>
             <v-row>
                 <v-col cols="12" sm="4">
-                    <v-select label="Select Year" :items="years" class="custom-select"></v-select>
+                    <v-select label="Year" :items="years" class="custom-select"></v-select>
                 </v-col>
                 <v-col cols="12" sm="4">
-                    <v-select label="Select Make" :items="makes" class="custom-select"></v-select>
+                    <v-select label="Make" :items="makes" class="custom-select"></v-select>
                 </v-col>
                 <v-col cols="12" sm="4">
-                    <v-select label="Select Model" :items="models" class="custom-select"></v-select>
+                    <v-select label="Model" :items="models" class="custom-select"></v-select>
                 </v-col>
             </v-row>
             <v-row justify="center">
@@ -64,7 +64,9 @@ const goToResults = () => {
 }
 
 .go-btn {
-    background: linear-gradient(135deg, #ff7e5f, #feb47b);
+    /* background: linear-gradient(135deg, #ff7e5f, #feb47b); */
+    background: linear-gradient(45deg, orange, #ff8c00);
+    box-shadow: 0px 5px 15px rgba(255, 126, 95, 0.5);
     color: white;
     padding: 12px 30px;
     font-weight: bold;
@@ -73,7 +75,8 @@ const goToResults = () => {
 }
 
 .go-btn:hover {
-    background: linear-gradient(135deg, #feb47b, #ff7e5f);
+    /* background: linear-gradient(135deg, #feb47b, #ff7e5f); */
+    background: linear-gradient(45deg, #ff8c00, orange);
     box-shadow: 0px 5px 15px rgba(255, 126, 95, 0.5);
 }
 </style>

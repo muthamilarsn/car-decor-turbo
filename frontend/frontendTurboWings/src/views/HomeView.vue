@@ -57,6 +57,10 @@
         </v-container>
       </v-card>
     </v-container>
+    <!-- Category Grid Component -->
+    <v-container>
+      <CategoryGrid />
+    </v-container>
   </v-app>
 </template>
 
@@ -65,11 +69,13 @@ import { defineComponent, ref, computed, onMounted } from "vue";
 import { useTheme } from "vuetify";
 import SearchBar from "@/components/SearchBar.vue";
 import FilterTable from "@/components/FilterTable.vue";
+import CategoryGrid from "@/components/CategoryGrid.vue";
 
 export default defineComponent({
   components: {
     SearchBar,
     FilterTable,
+    CategoryGrid,
   },
   setup() {
     const theme = useTheme();
@@ -150,16 +156,17 @@ export default defineComponent({
 /* Tabs Section */
 .tabs-section {
   background: var(--v-background-base);
-  padding-top: 8px;
-  border-bottom: 2px solid rgba(255, 165, 0, 0.5);
+  padding-top: 7px;
+  border-bottom: 4px solid rgba(255, 165, 0);
 }
 
 .custom-tab {
-  text-transform: uppercase;
-  font-weight: bold;
+  text-transform: none;
+  /* font-weight: bold; */
   color: white;
   padding: 12px 16px;
   transition: all 0.3s ease-in-out;
+  font-size: medium;
 }
 
 .custom-tab:hover {
@@ -172,6 +179,9 @@ export default defineComponent({
   border-radius: 10px;
   padding: 12px 20px;
   box-shadow: 0 4px 10px rgba(255, 140, 0, 0.5);
+  font-size: large;
+  font-weight: bold;
+  /* text-transform: uppercase; */
 }
 
 /* Hero Section */
