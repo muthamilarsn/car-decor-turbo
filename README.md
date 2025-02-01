@@ -1,2 +1,2 @@
 # car-decor-turbo
-for turboWings one application for all the need
+for a car decor shop(turboWings) to show all ots products in one place.
