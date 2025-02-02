@@ -4,8 +4,8 @@
             <div class="overlay"></div>
             <v-container class="about-us-content">
                 <h2 class="about-us-title">Why Shop with <span class="highlight">Turbo Wings</span>?</h2>
-                <p v-if="!expanded" class="about-us-text">{{ truncatedText }}...</p>
-                <p v-else v-html="highlightedText" class="about-us-text"></p>
+                <div v-if="!expanded" class="about-us-text" v-html="truncatedText"></div>
+                <div v-else class="about-us-text" v-html="highlightedText"></div>
                 <v-btn class="custom-button" @click="expanded = !expanded">
                     {{ expanded ? 'View Less' : 'View More' }}
                     <v-icon>{{ expanded ? 'mdi-chevron-up' : 'mdi-chevron-down' }}</v-icon>
@@ -20,17 +20,18 @@ import { ref, computed } from 'vue';
 
 const expanded = ref(false);
 
-const fullText = `Turbo Wings is dedicated to providing you the best possible experience when shopping for automotive parts. 
-Want to protect your car with the best <span class='product-highlight'>all-weather floor mats</span>? Need advice on which <span class='product-highlight'>exhaust system</span> to purchase? 
-Having trouble deciding on whether to get a <span class='product-highlight'>folding</span> or a <span class='product-highlight'>roll-up tonneau cover</span>? Just contact us, and our team of car lovers will happily assist you. 
-We have partnered with all the top manufacturers such as Magnaflow, Pendaliner, Flowmaster, Bak Industries, WeatherTech, EBC Brakes, Megan Racing, Fox Shocks, 3D Maxpider, and many more to bring you top quality products at the lowest prices on the market. 
-We're a no-nonsense site that passes exclusive deals and discounts directly to you!
+const fullText = [
+    `Turbo Wings is dedicated to providing you the best possible experience when shopping for automotive parts. 
+  Want to protect your car with the best <span class='product-highlight'>all-weather floor mats</span>? Need advice on which <span class='product-highlight'>exhaust system</span> to purchase? 
+  Having trouble deciding on whether to get a <span class='product-highlight'>folding</span> or a <span class='product-highlight'>roll-up tonneau cover</span>? Just contact us, and our team of car lovers will happily assist you.<br><br>`,
+    `We have partnered with all the top manufacturers such as Magnaflow, Pendaliner, Flowmaster, Bak Industries, WeatherTech, EBC Brakes, Megan Racing, Fox Shocks, 3D Maxpider, and many more to bring you top quality products at the lowest prices on the market. 
+  We're a no-nonsense site that passes exclusive deals and discounts directly to you! <br><br>
+  Our work doesn't end after you place your order. Our team will work hard to make sure the product you purchased will fit your exact vehicle specifications and that you receive the product in a timely manner. 
+  Looking for new <span class='product-highlight'>auto floor mats</span> or the best <span class='product-highlight'>lift kit brands</span>? Look no further. With Turbo Wings, you can expect a superior, 1-on-1 customer service experience tailored to YOU.`
+];
 
-Our work doesn't end after you place your order. Our team will work hard to make sure the product you purchased will fit your exact vehicle specifications and that you receive the product in a timely manner. 
-Looking for new <span class='product-highlight'>auto floor mats</span> or the best <span class='product-highlight'>lift kit brands</span>? Look no further. With Turbo Wings, you can expect a superior, 1-on-1 customer service experience tailored to YOU.`;
-
-const truncatedText = computed(() => fullText.substring(0, 200));
-const highlightedText = computed(() => fullText);
+const truncatedText = computed(() => `<p>${fullText[0].substring(0, 200)}...</p>`);
+const highlightedText = computed(() => fullText.map(paragraph => `<p>${paragraph}</p>`).join(''));
 </script>
 
 <style scoped>
@@ -58,7 +59,7 @@ const highlightedText = computed(() => fullText);
 .about-us-content {
     position: relative;
     z-index: 2;
-    text-align: center;
+    text-align: left;
     color: white;
     padding: 20px;
     max-width: 900px;
@@ -81,6 +82,7 @@ const highlightedText = computed(() => fullText);
     opacity: 0.9;
     color: rgba(255, 255, 255, 0.9);
     padding: 20px 5px;
+    text-align: left;
 }
 
 .product-highlight {
