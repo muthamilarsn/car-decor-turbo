@@ -26,9 +26,9 @@ import { defineComponent } from "vue";
 export default defineComponent({
     setup() {
         const categories = [
-            { title: "Floor Mats", image: "/images/category/mats.jpg" },
-            { title: "Air Intake Systems", image: "/images/category/filters.jpg" },
-            { title: "Exhaust Systems", image: "/images/category/colorPipes.jpg" },
+            { title: "Floor Mats", image: "/images/category/mat.png" },
+            { title: "Air Intake Systems", image: "/images/category/filters.png" },
+            { title: "Exhaust Systems", image: "/images/category/exhaustPipe.png" },
             { title: "Brakes", image: "/images/category/discBrake.png" },
             { title: "Performance Chips", image: "/images/category/service.jpg" },
             { title: "Tonneau Covers", image: "/images/category/service.jpg" },

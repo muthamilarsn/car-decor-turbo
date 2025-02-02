@@ -27,7 +27,7 @@
     <v-container fluid class="hero-section">
       <v-card flat class="hero-card">
         <!-- Dark overlay -->
-        <div class="overlay"></div>
+        <!-- <div class="overlay"></div> -->
         <v-container class="hero-content">
           <!-- Tabs Section -->
           <v-tabs v-model="selectedTab" class="tabs-section" align-tabs="center">
@@ -58,9 +58,12 @@
       </v-card>
     </v-container>
     <!-- Category Grid Component -->
-    <v-container>
-      <CategoryGrid />
-    </v-container>
+    <CategoryGrid />
+
+    <!-- About Us Component -->
+    <AboutUs />
+
+    <!-- Footer Section -->
   </v-app>
 </template>
 
@@ -70,12 +73,14 @@ import { useTheme } from "vuetify";
 import SearchBar from "@/components/SearchBar.vue";
 import FilterTable from "@/components/FilterTable.vue";
 import CategoryGrid from "@/components/CategoryGrid.vue";
+import AboutUs from "@/components/AboutUs.vue";
 
 export default defineComponent({
   components: {
     SearchBar,
     FilterTable,
     CategoryGrid,
+    AboutUs,
   },
   setup() {
     const theme = useTheme();
@@ -208,8 +213,6 @@ export default defineComponent({
 .hero-card::before {
   content: "";
   position: absolute;
-  top: 0;
-  left: 0;
   width: 100%;
   height: 100%;
   background: rgba(0, 0, 0, 0.4);
