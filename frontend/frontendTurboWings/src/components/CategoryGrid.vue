@@ -43,7 +43,7 @@ export default defineComponent({
             { title: "Performance Chips", image: "/images/category/performanceChips.png" },
             { title: "Tonneau Covers", image: "/images/category/tonneauCover.png" },
             { title: "Running Boards", image: "/images/category/runningBoards.png" },
-            { title: "Suspension Systems", image: "/images/category/brakeSystem.png", highlighted: true },
+            { title: "Suspension Systems", image: "/images/category/brakeSystem.png", highlighted: false },
             { title: "Roof Racks", image: "/images/category/roofRacks.png" },
             { title: "Bug Deflectors", image: "/images/category/carBugDeflectorr.png" },
             { title: "Trailer Hitches", image: "/images/category/trailerHitches.png" },
