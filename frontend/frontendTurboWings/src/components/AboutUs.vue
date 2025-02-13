@@ -6,7 +6,7 @@
                 <h2 class="about-us-title">Why Shop with <span class="highlight">Turbo Wings</span>?</h2>
                 <div v-if="!expanded" class="about-us-text" v-html="truncatedText"></div>
                 <div v-else class="about-us-text" v-html="highlightedText"></div>
-                <v-btn class="custom-button" @click="expanded = !expanded">
+                <v-btn class="custom-button" elevation="4" color="orange-accent-3" variant="outlined" @click="expanded = !expanded">
                     {{ expanded ? 'View Less' : 'View More' }}
                     <v-icon>{{ expanded ? 'mdi-chevron-up' : 'mdi-chevron-down' }}</v-icon>
                 </v-btn>
@@ -30,7 +30,7 @@ const fullText = [
   Looking for new <span class='product-highlight'>auto floor mats</span> or the best <span class='product-highlight'>lift kit brands</span>? Look no further. With Turbo Wings, you can expect a superior, 1-on-1 customer service experience tailored to YOU.`
 ];
 
-const truncatedText = computed(() => `<p>${fullText[0].substring(0, 200)}...</p>`);
+const truncatedText = computed(() => `<p>${fullText[0].substring(0, 529)}...</p>`);
 const highlightedText = computed(() => fullText.map(paragraph => `<p>${paragraph}</p>`).join(''));
 </script>
 
@@ -59,7 +59,7 @@ const highlightedText = computed(() => fullText.map(paragraph => `<p>${paragraph
 .about-us-content {
     position: relative;
     z-index: 2;
-    text-align: left;
+    text-align: center;
     color: white;
     padding: 20px;
     max-width: 900px;
@@ -90,16 +90,11 @@ const highlightedText = computed(() => fullText.map(paragraph => `<p>${paragraph
     font-weight: bold;
 }
 
-.custom-button {
+/* .custom-button {
     background: linear-gradient(135deg, orange, darkorange);
-    color: white;
-    border-radius: 25px;
-    padding: 10px 20px;
-    transition: all 0.3s ease;
 }
 
 .custom-button:hover {
     background: linear-gradient(135deg, darkorange, orangered);
-    transform: scale(1.05);
-}
+} */
 </style>
