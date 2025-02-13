@@ -58,12 +58,16 @@
       </v-card>
     </v-container>
     <!-- Category Grid Component -->
-    <CategoryGrid />
+    <CategoryGridAutoParts />
 
     <!-- About Us Component -->
     <AboutUs />
 
+    <!-- Category Grid Component -->
+    <CategoryGridFeatured />
+
     <!-- Footer Section -->
+    <FooterView />
   </v-app>
 </template>
 
@@ -72,15 +76,19 @@ import { defineComponent, ref, computed, onMounted } from "vue";
 import { useTheme } from "vuetify";
 import SearchBar from "@/components/SearchBar.vue";
 import FilterTable from "@/components/FilterTable.vue";
-import CategoryGrid from "@/components/CategoryGrid.vue";
+import CategoryGridAutoParts from "@/components/CategoryGridAutoParts.vue";
+import CategoryGridFeatured from "@/components/CategoryGridFeatured.vue";
 import AboutUs from "@/components/AboutUs.vue";
+import FooterView from "./FooterView.vue";
 
 export default defineComponent({
   components: {
     SearchBar,
     FilterTable,
-    CategoryGrid,
+    CategoryGridAutoParts,
+    CategoryGridFeatured,
     AboutUs,
+    FooterView,
   },
   setup() {
     const theme = useTheme();

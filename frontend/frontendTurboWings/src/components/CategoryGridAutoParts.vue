@@ -1,5 +1,5 @@
 <template>
-    <v-container class="category-grid">
+    <v-container>
         <v-card class="mx-auto pa-6" color="accent" rounded="lg">
             <h2 class="section-title">Auto Parts & Accessories
                 <!-- <span class="shop-all">SHOP ALL ></span> -->
@@ -101,9 +101,9 @@ export default defineComponent({
     display: flex;
     align-items: center;
     gap: 6px;
-    text-transform: uppercase;
-    font-weight: bold;
-    transition: all 0.3s ease;
+    /* text-transform: uppercase; */
+    /* font-weight: bold; */
+    /* transition: all 0.3s ease; */
 }
 
 .category-button:hover {

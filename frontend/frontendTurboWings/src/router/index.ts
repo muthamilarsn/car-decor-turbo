@@ -12,11 +12,11 @@ const routes = [
     name: 'Home',
     component: HomeView,
   },
-  {
-    path: '/footeer',
-    name: 'Footer',
-    component: FooterView,
-  },
+  // {
+  //   path: '/footer',
+  //   name: 'Footer',
+  //   component: FooterView,
+  // },
   // {
   //   path: '/products',
   //   name: 'Products',
